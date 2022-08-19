@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 require("./db/config");
 const User = require("./db/User");
-const Notion = require("./db/Product");
+const Notion = require("./db/Collection");
 const Jwt = require("jsonwebtoken");
 const jwtKey = "notion";
 const app = express();

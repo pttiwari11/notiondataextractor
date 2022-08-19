@@ -1,6 +1,6 @@
 const dotenv = require("dotenv").config();
 const { Client } = require("@notionhq/client");
-const Notion = require("./db/Product");
+const Notion = require("./db/Collection");
 const express = require("express");
 const cors = require("cors");
 require("./db/config");
