@@ -12,12 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pttiwari11/notiondataextractor11.git"
+    "url": "git+https://github.com/pttiwari11/notiondataextractor.git"
   },
   "author": "Pushpendra Tiwari",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/pttiwari11/notiondataextractor11/issues"
+    "url": "https://github.com/pttiwari11/notiondataextractor/issues"
   },
-  "homepage": "https://github.com/pttiwari11/notiondataextractor11#readme"
+  "homepage": "https://github.com/pttiwari11/notiondataextractor#readme"
 }
