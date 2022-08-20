@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+const PORT = process.env.PORT || 5000
+
 const NotionList = () => {
   const [notions, setNotions] = useState([]);
 
@@ -9,7 +11,7 @@ const NotionList = () => {
   }, []);
 
   const getNotions = async () => {
-    let result = await fetch("http://localhost:5000/notions", {
+    let result = await fetch(`http://localhost:${PORT}/notions`, {
       headers: {
         authorization: JSON.parse(localStorage.getItem("token")),
       },
@@ -21,7 +23,7 @@ const NotionList = () => {
 
   const deleteNotion = async (id) => {
     console.warn(id);
-    let result = await fetch(`http://localhost:5000/notion/${id}`, {
+    let result = await fetch(`http://localhost:${PORT}/notion/${id}`, {
       method: "Delete",
     });
     result = await result.json();
@@ -33,7 +35,7 @@ const NotionList = () => {
   const searchHandle = async (event) => {
     let key = event.target.value;
     if (key) {
-      let result = await fetch(`http://localhost:5000/search/${key}`);
+      let result = await fetch(`http://localhost:${PORT}/search/${key}`);
       result = await result.json();
       if (result) {
         setNotions(result);
@@ -45,7 +47,7 @@ const NotionList = () => {
 
   const getData = async (id, token, category, uid) => {
     try {
-      let result = await fetch(`http://localhost:5000/getData/${uid}`);
+      let result = await fetch(`http://localhost:${PORT}/getData/${uid}`);
       result = await result.json();
       console.log(result.id, result.token, result.category);
     } catch {

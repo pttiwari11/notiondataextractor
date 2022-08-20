@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
+const PORT = process.env.PORT || 5000
+
 const UpdateNotion = () => {
   const [id, setId] = React.useState("");
   const [token, setToken] = React.useState("");
@@ -14,7 +16,7 @@ const UpdateNotion = () => {
 
   const getNotionDetails = async () => {
     console.warn(params);
-    let result = await fetch(`http://localhost:5000/notion/${params.id}`);
+    let result = await fetch(`http://localhost:${PORT}/notion/${params.id}`);
     result = await result.json();
     setId(result.id);
     setToken(result.token);
@@ -23,9 +25,9 @@ const UpdateNotion = () => {
 
   const updateNotion = async () => {
     console.warn(id, token, category);
-    let result = await fetch(`http://localhost:5000/notion/${params.id}`, {
+    let result = await fetch(`http://localhost:${PORT}/notion/${params.id}`, {
       method: "Put",
-      body: JSON.stringify({ id, token, category}),
+      body: JSON.stringify({ id, token, category }),
       headers: {
         "Content-Type": "Application/json",
       },

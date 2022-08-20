@@ -12,7 +12,7 @@ const Nav = () => {
       <img
         alt="logo"
         className="logo"
-        src="https://www.pngkey.com/png/detail/256-2560427_why-choose-our-ecommerce-development-service-aarp-medicare.png"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLuIUyQ9r3SrViVd0iclDLSc82dOylJ-eT8UlB4Hk&s"
       />
       {auth ? (
         <ul className="nav-ul">
@@ -29,7 +29,6 @@ const Nav = () => {
             <Link to="/notionData">NotionData</Link>
           </li>
           <li>
-            
             <Link onClick={logout} to="/signup">
               Logout ({JSON.parse(auth).name})
             </Link>

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+const PORT = process.env.PORT || 5000
+
 const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -15,7 +17,7 @@ const SignUp = () => {
 
   const collectData = async () => {
     console.warn(name, email, password);
-    let result = await fetch("http://localhost:5000/register", {
+    let result = await fetch(`http://localhost:${PORT}/register`, {
       method: "post",
       body: JSON.stringify({ name, email, password }),
       headers: {

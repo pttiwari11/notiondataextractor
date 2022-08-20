@@ -1,5 +1,7 @@
 import React from "react";
 
+const PORT = process.env.PORT || 5000
+
 const AddNotion = () => {
   const [id, setId] = React.useState("");
   const [token, setToken] = React.useState("");
@@ -13,7 +15,7 @@ const AddNotion = () => {
     }
 
     const userId = JSON.parse(localStorage.getItem("user"))._id;
-    let result = await fetch("http://localhost:5000/add-notion", {
+    let result = await fetch(`http://localhost:${PORT}/add-notion`, {
       method: "post",
       body: JSON.stringify({ id, token, category, userId }),
       headers: {
