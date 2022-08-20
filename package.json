@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/pttiwari11/notiondataextractor/issues"
   },
-  "homepage": "https://github.com/pttiwari11/notiondataextractor#readme"
+  "homepage": "https://github.com/pttiwari11/notiondataextractor#readme",
+  "dependencies": {
+    "nodemon": "^2.0.19"
+  }
 }
