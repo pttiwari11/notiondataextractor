@@ -12,7 +12,7 @@ const dotenv = require("dotenv").config();
 app.use(express.json());
 app.use(cors());
 
-const Port = process.env.PORT || "5000"
+const PORT = process.env.PORT || "5000";
 
 app.post("/register", async (req, resp) => {
   let user = new User(req.body);
