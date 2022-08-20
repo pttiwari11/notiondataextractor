@@ -117,9 +117,10 @@ app.get("/search/:key", async (req, resp) => {
   });
   resp.send(result);
 });
-
+/*
 app.get("/", (req, resp) => {
   resp.send("Backend Running....");
 });
+*/
 
-app.listen(5000);
+app.listen(process.env.PORT || 5000);
