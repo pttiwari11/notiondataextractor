@@ -12,7 +12,7 @@ const dotenv = require("dotenv").config();
 app.use(express.json());
 app.use(cors());
 
-const PORT = process.env.PORT || "5000";
+const PORT = process.env.PORT || '5000';
 
 app.post("/register", async (req, resp) => {
   let user = new User(req.body);
@@ -124,5 +124,13 @@ app.get("/", (req, resp) => {
   resp.send("Backend Running....");
 });
 */
+
+if(process.env.NODE_ENV == "production") {
+  app.use(express.static("frontend/build"));
+  const path = require("path");
+  app.get("*", (req,res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  })
+}
 
 app.listen(PORT);

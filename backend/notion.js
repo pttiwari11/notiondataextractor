@@ -4,7 +4,6 @@ const Notion = require("./db/Collection");
 const express = require("express");
 const cors = require("cors");
 require("./db/config");
-const axios = require("axios");
 const app = express();
 const notionValue = require("./notionValue");
 
